@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xmldoc>
+  <copyright>SAME AS NELSON SOFTWARE</copyright>
+  <language>en_US</language>
+  <keyword>morse.play</keyword>
+  <short_description>Play a message as Morse code audio.</short_description>
+  <syntax>
+    <syntax_item>morse.play(input)</syntax_item>
+    <syntax_item>morse.play(input, name, value)</syntax_item>
+    <syntax_item>[y, fs] = morse.play(input, ...)</syntax_item>
+    <syntax_item>[y, fs, player] = morse.play(input, ...)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>input</param_name>
+      <param_description>a character row vector or scalar string: plain text or a Morse code string.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>name, value</param_name>
+      <param_description>any option of <b>morse.tone</b> (WPM, Farnsworth, Frequency, SampleRate, Amplitude, RampMs, Input), plus 'Block' (default true): with 'Block', false the call starts the audio and returns immediately.</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>y</param_name>
+      <param_description>the samples that were played (column vector).</param_description>
+    </param_output_item>
+    <param_output_item>
+      <param_name>fs</param_name>
+      <param_description>the sample rate in hertz.</param_description>
+    </param_output_item>
+    <param_output_item>
+      <param_name>player</param_name>
+      <param_description>the audioplayer object, useful with stop(player) to end a non-blocking playback.</param_description>
+    </param_output_item>
+  </param_output>
+  <description>
+    <p>Synthesizes the audio with <b>morse.tone</b> and plays it on the default output device. By default it returns when the sound has finished; with 'Block', false it returns immediately and the playback continues.</p>
+  </description>
+  <used_function />
+  <bibliography />
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description />
+      <example_item_data><![CDATA[morse.play('SOS')
+morse.play('HELLO', 'WPM', 15, 'Frequency', 600)]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item>
+      <link linkend="${morse}morse.tone">morse.tone</link>
+    </see_also_item>
+    <see_also_item>
+      <link linkend="${morse}morse.towav">morse.towav</link>
+    </see_also_item>
+    <see_also_item>
+      <link linkend="${morse}morse.practice">morse.practice</link>
+    </see_also_item>
+  </see_also>
+  <history>
+    <history_item>
+      <history_version>1.0.0</history_version>
+      <history_description>initial version</history_description>
+    </history_item>
+  </history>
+  <authors>
+    <author_item>Allan CORNET</author_item>
+  </authors>
+</xmldoc>

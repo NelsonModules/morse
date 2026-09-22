@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xmldoc>
+  <copyright>SAME AS NELSON SOFTWARE</copyright>
+  <language>fr_FR</language>
+  <keyword>morse.towav</keyword>
+  <short_description>Ecrire un message Morse dans un fichier WAV.</short_description>
+  <syntax>
+    <syntax_item>morse.towav(filename, input)</syntax_item>
+    <syntax_item>morse.towav(filename, input, nom, valeur)</syntax_item>
+    <syntax_item>[y, fs] = morse.towav(filename, input, ...)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>filename</param_name>
+      <param_description>le chemin du fichier WAV a ecrire.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>input</param_name>
+      <param_description>un vecteur ligne de caracteres ou une chaine scalaire : texte ou code Morse.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>nom, valeur</param_name>
+      <param_description>toute option de <b>morse.tone</b> (WPM, Farnsworth, Frequency, SampleRate, Amplitude, RampMs, Input).</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>y</param_name>
+      <param_description>les echantillons ecrits (vecteur colonne).</param_description>
+    </param_output_item>
+    <param_output_item>
+      <param_name>fs</param_name>
+      <param_description>la frequence d'echantillonnage en hertz.</param_description>
+    </param_output_item>
+  </param_output>
+  <description>
+    <p>Synthetise l'audio avec <b>morse.tone</b> et l'ecrit dans <b>filename</b> avec <b>audiowrite</b>, pour le partager ou le jouer plus tard sans Nelson.</p>
+  </description>
+  <used_function>
+    <used_function_item>audiowrite</used_function_item>
+  </used_function>
+  <bibliography />
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description />
+      <example_item_data><![CDATA[morse.towav([tempdir(), 'sos.wav'], 'SOS', 'WPM', 18)]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item>
+      <link linkend="${morse}morse.tone">morse.tone</link>
+    </see_also_item>
+    <see_also_item>
+      <link linkend="${morse}morse.play">morse.play</link>
+    </see_also_item>
+    <see_also_item>
+      <link linkend="${morse}morse.fromwav">morse.fromwav</link>
+    </see_also_item>
+  </see_also>
+  <history>
+    <history_item>
+      <history_version>1.0.0</history_version>
+      <history_description>version initiale</history_description>
+    </history_item>
+  </history>
+  <authors>
+    <author_item>Allan CORNET</author_item>
+  </authors>
+</xmldoc>

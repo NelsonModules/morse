@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xmldoc>
+  <copyright>SAME AS NELSON SOFTWARE</copyright>
+  <language>en_US</language>
+  <keyword>morse.encode</keyword>
+  <short_description>Encode text into International Morse code.</short_description>
+  <syntax>
+    <syntax_item>code = morse.encode(text)</syntax_item>
+    <syntax_item>code = morse.encode(text, name, value)</syntax_item>
+    <syntax_item>[code, skipped] = morse.encode(text, ...)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>text</param_name>
+      <param_description>the message to encode (case-insensitive): a char row vector, a scalar string, a string array or a cellstr (whose elements are joined by a space).</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>name, value</param_name>
+      <param_description>optional name-value pairs: 'LetterSeparator' (default ' '), 'WordSeparator' (default ' / '), 'Dot' (default '.'), 'Dash' (default '-'), 'OnUnknown' ('skip' (default), 'error' or 'keep'), 'Prosigns' (default true).</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>code</param_name>
+      <param_description>a character row vector, the Morse code.</param_description>
+    </param_output_item>
+    <param_output_item>
+      <param_name>skipped</param_name>
+      <param_description>a cellstr of the unique characters not found in the table.</param_description>
+    </param_output_item>
+  </param_output>
+  <description>
+    <p>The mapping is the International Morse code table (ITU-R M.1677-1): letters, digits, the standard punctuation and a few accented letters. Within a word the letters are joined by 'LetterSeparator' and the words by 'WordSeparator'. Characters that are not in the table are dropped ('skip'), raise <b>morse:unknownCharacter</b> ('error'), or are copied verbatim as their own token ('keep', for display only).</p>
+    <p>With 'Prosigns' true (the default), a group written between angle brackets is keyed as a prosign, that is the letters run together with no gap: morse.encode('&lt;AR&gt;') is '.-.-.'. See <b>morse.prosigns</b>.</p>
+  </description>
+  <used_function />
+  <bibliography>ITU-R Recommendation M.1677-1, International Morse code.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description />
+      <example_item_data><![CDATA[morse.encode('SOS')
+morse.encode('HELLO WORLD')
+[code, skipped] = morse.encode('CAFE #')]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item>
+      <link linkend="${morse}morse.decode">morse.decode</link>
+    </see_also_item>
+    <see_also_item>
+      <link linkend="${morse}morse.play">morse.play</link>
+    </see_also_item>
+    <see_also_item>
+      <link linkend="${morse}morse.table">morse.table</link>
+    </see_also_item>
+    <see_also_item>
+      <link linkend="${morse}morse.prosigns">morse.prosigns</link>
+    </see_also_item>
+  </see_also>
+  <history>
+    <history_item>
+      <history_version>1.0.0</history_version>
+      <history_description>initial version</history_description>
+    </history_item>
+  </history>
+  <authors>
+    <author_item>Allan CORNET</author_item>
+  </authors>
+</xmldoc>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xmldoc>
+  <copyright>SAME AS NELSON SOFTWARE</copyright>
+  <language>fr_FR</language>
+  <keyword>morse.isvalid</keyword>
+  <short_description>Tester si une chaine est du code Morse decodable.</short_description>
+  <syntax>
+    <syntax_item>tf = morse.isvalid(code)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>code</param_name>
+      <param_description>un vecteur ligne de caracteres ou une chaine scalaire.</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>tf</param_name>
+      <param_description>un scalaire logique.</param_description>
+    </param_output_item>
+  </param_output>
+  <description>
+    <p>Vrai lorsque <b>code</b> est une chaine Morse non vide composee uniquement de points, traits, espaces de lettre et barres de mot, dont chaque groupe points/traits correspond a un caractere de la table.</p>
+  </description>
+  <used_function />
+  <bibliography />
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description />
+      <example_item_data><![CDATA[morse.isvalid('... --- ...')
+morse.isvalid('........')]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item>
+      <link linkend="${morse}morse.decode">morse.decode</link>
+    </see_also_item>
+  </see_also>
+  <history>
+    <history_item>
+      <history_version>1.0.0</history_version>
+      <history_description>version initiale</history_description>
+    </history_item>
+  </history>
+  <authors>
+    <author_item>Allan CORNET</author_item>
+  </authors>
+</xmldoc>

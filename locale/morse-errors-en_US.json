@@ -1,0 +1,8 @@
+{
+  "morse:emptyAudio": "Nothing to write: the input produced no audio.",
+  "morse:invalidFilename": "FILENAME must not be empty.",
+  "morse:invalidText": "%s must be text (a char row vector, a string, or a cellstr).",
+  "morse:noDisplay": "morse.practice needs a graphical display (run Nelson with the GUI, not the -cli).",
+  "morse:unknownCharacter": "Character '%s' (code %d) is not in the Morse table.",
+  "morse:unknownCode": "Group '%s' does not match any character in the Morse table."
+}

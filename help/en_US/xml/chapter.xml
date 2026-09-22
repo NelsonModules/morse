@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xmldoc>
+  <copyright>SAME AS NELSON SOFTWARE</copyright>
+  <language>en_US</language>
+  <module_name>morse</module_name>
+  <chapter>Morse code</chapter>
+  <chapter_description>
+    <p>International Morse code for Nelson: encode text to dots and dashes and
+    decode it back, look up the ITU-R M.1677-1 table, synthesize the keyed audio
+    (with adjustable speed, tone and Farnsworth spacing), play it or write it to
+    a WAV file, and open an interactive practice trainer.</p>
+  </chapter_description>
+</xmldoc>

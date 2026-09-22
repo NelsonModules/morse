@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xmldoc>
+  <copyright>SAME AS NELSON SOFTWARE</copyright>
+  <language>fr_FR</language>
+  <keyword>morse.practice</keyword>
+  <short_description>Ouvrir l'entraineur Morse interactif.</short_description>
+  <syntax>
+    <syntax_item>morse.practice()</syntax_item>
+    <syntax_item>h = morse.practice()</syntax_item>
+  </syntax>
+  <param_input />
+  <param_output>
+    <param_output_item>
+      <param_name>h</param_name>
+      <param_description>le handle de la fenetre de l'entraineur.</param_description>
+    </param_output_item>
+  </param_output>
+  <description>
+    <p>Ouvre une fenetre unique ou l'on saisit un message, on le voit devenir du Morse dans un afficheur facon poste radio, et on l'envoie au haut-parleur. La vitesse du code, la vitesse globale (Farnsworth) et la frequence de la tonalite sont reglables ; baisser la vitesse globale sous celle du code etire l'espacement tout en gardant les elements nets. L'audio peut etre enregistre en WAV, et la table complete est a un clic. Necessite un affichage graphique.</p>
+  </description>
+  <used_function />
+  <bibliography />
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description />
+      <example_item_data><![CDATA[morse.practice();]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item>
+      <link linkend="${morse}morse.play">morse.play</link>
+    </see_also_item>
+    <see_also_item>
+      <link linkend="${morse}morse.encode">morse.encode</link>
+    </see_also_item>
+    <see_also_item>
+      <link linkend="${morse}morse.table">morse.table</link>
+    </see_also_item>
+  </see_also>
+  <history>
+    <history_item>
+      <history_version>1.0.0</history_version>
+      <history_description>version initiale</history_description>
+    </history_item>
+  </history>
+  <authors>
+    <author_item>Allan CORNET</author_item>
+  </authors>
+</xmldoc>

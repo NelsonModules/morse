@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xmldoc>
+  <copyright>SAME AS NELSON SOFTWARE</copyright>
+  <language>fr_FR</language>
+  <keyword>morse.prosigns</keyword>
+  <short_description>Les signaux de procedure Morse courants.</short_description>
+  <syntax>
+    <syntax_item>morse.prosigns()</syntax_item>
+    <syntax_item>p = morse.prosigns()</syntax_item>
+  </syntax>
+  <param_input />
+  <param_output>
+    <param_output_item>
+      <param_name>p</param_name>
+      <param_description>un tableau cellulaire N-par-3 : le nom du prosigne, sa forme texte entre chevrons et son code points/traits.</param_description>
+    </param_output_item>
+  </param_output>
+  <description>
+    <p>Les prosignes sont des signaux de procedure envoyes comme plusieurs lettres accolees, sans espace entre elles. Dans le texte on les ecrit entre chevrons, et <b>morse.encode</b> transforme un groupe entre chevrons en code accole : morse.encode('&lt;AR&gt;') vaut '.-.-.'. Sans sortie, morse.prosigns affiche les plus courants (AR, AS, BT, CT, KN, SK, SN, SOS).</p>
+  </description>
+  <used_function />
+  <bibliography />
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description />
+      <example_item_data><![CDATA[morse.prosigns()
+morse.encode('R RN <AR>')]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item>
+      <link linkend="${morse}morse.encode">morse.encode</link>
+    </see_also_item>
+    <see_also_item>
+      <link linkend="${morse}morse.table">morse.table</link>
+    </see_also_item>
+  </see_also>
+  <history>
+    <history_item>
+      <history_version>1.0.0</history_version>
+      <history_description>version initiale</history_description>
+    </history_item>
+  </history>
+  <authors>
+    <author_item>Allan CORNET</author_item>
+  </authors>
+</xmldoc>

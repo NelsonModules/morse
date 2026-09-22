@@ -1,0 +1,33 @@
+{
+  "module": "morse",
+  "title": "Morse code",
+  "version": "1.0.0",
+  "authors": [
+    "Allan CORNET"
+  ],
+  "summary": "International Morse code: encode, decode, audio and a trainer.",
+  "description": "International Morse code (ITU-R M.1677-1) for Nelson: encode text to dots and dashes and decode it back, the code table, keyed-tone audio synthesis with adjustable speed, frequency and Farnsworth spacing, playback, WAV export, and an interactive practice trainer.",
+  "license": "LGPL-3.0-or-later",
+  "repository": "https://github.com/NelsonModules/morse",
+  "homepage": "https://github.com/NelsonModules/morse",
+  "issues": "https://github.com/NelsonModules/morse/issues",
+  "documentation": "https://github.com/NelsonModules/morse#readme",
+  "builtin": false,
+  "platforms": [
+    "all"
+  ],
+  "nelson": ">=2.0.0",
+  "dependencies": {},
+  "keywords": [
+    "nelson",
+    "morse",
+    "morse code",
+    "telegraph",
+    "cw",
+    "ham radio",
+    "encode",
+    "decode",
+    "audio",
+    "itu"
+  ]
+}

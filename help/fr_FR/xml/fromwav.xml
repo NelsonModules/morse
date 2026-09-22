@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xmldoc>
+  <copyright>SAME AS NELSON SOFTWARE</copyright>
+  <language>fr_FR</language>
+  <keyword>morse.fromwav</keyword>
+  <short_description>Decoder du code Morse depuis un fichier audio WAV.</short_description>
+  <syntax>
+    <syntax_item>text = morse.fromwav(filename)</syntax_item>
+    <syntax_item>text = morse.fromwav(filename, nom, valeur)</syntax_item>
+    <syntax_item>[text, code] = morse.fromwav(filename, ...)</syntax_item>
+    <syntax_item>[text, code, info] = morse.fromwav(filename, ...)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>filename</param_name>
+      <param_description>le chemin du fichier WAV a decoder.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>nom, valeur</param_name>
+      <param_description>paires nom-valeur optionnelles : 'Frequency' (defaut [], estimee sur le pic spectral dominant), 'WindowMs' (defaut 5), 'Threshold' (defaut [], automatique, dans [0,1]), 'MinElementMs' (defaut 10).</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>text</param_name>
+      <param_description>le texte decode (en majuscules).</param_description>
+    </param_output_item>
+    <param_output_item>
+      <param_name>code</param_name>
+      <param_description>la chaine de code Morse retrouvee (la forme produite par morse.encode).</param_description>
+    </param_output_item>
+    <param_output_item>
+      <param_name>info</param_name>
+      <param_description>une struct avec la 'frequency' detectee (Hz), l'unite 'unit' (secondes), 'wpm', 'threshold' et le nombre d''elements'.</param_description>
+    </param_output_item>
+  </param_output>
+  <description>
+    <p>Inverse de <b>morse.towav</b>. La tonalite est transformee en enveloppe marche/arret (calee sur la frequence de la tonalite), seuillee, puis lue en segments : les sons courts et longs deviennent points et traits, et les silences les espaces dans une lettre, entre lettres et entre mots. La vitesse est mesuree depuis l'audio, la WPM n'a donc pas besoin d'etre connue ; les espaces de lettre et de mot sont separes par leur propre regroupement, ce qui decode aussi l'espacement Farnsworth. Pour un enregistrement propre la frequence est trouvee automatiquement ; passer 'Frequency' pour se caler sur une tonalite connue dans un enregistrement bruite.</p>
+  </description>
+  <used_function>
+    <used_function_item>audioread</used_function_item>
+  </used_function>
+  <bibliography />
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description />
+      <example_item_data><![CDATA[f = [tempdir(), 'sos.wav'];
+morse.towav(f, 'SOS');
+[text, code, info] = morse.fromwav(f)]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item>
+      <link linkend="${morse}morse.towav">morse.towav</link>
+    </see_also_item>
+    <see_also_item>
+      <link linkend="${morse}morse.decode">morse.decode</link>
+    </see_also_item>
+    <see_also_item>
+      <link linkend="${morse}morse.tone">morse.tone</link>
+    </see_also_item>
+  </see_also>
+  <history>
+    <history_item>
+      <history_version>1.0.0</history_version>
+      <history_description>version initiale</history_description>
+    </history_item>
+  </history>
+  <authors>
+    <author_item>Allan CORNET</author_item>
+  </authors>
+</xmldoc>

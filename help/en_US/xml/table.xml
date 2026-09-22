@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xmldoc>
+  <copyright>SAME AS NELSON SOFTWARE</copyright>
+  <language>en_US</language>
+  <keyword>morse.table</keyword>
+  <short_description>The International Morse code table.</short_description>
+  <syntax>
+    <syntax_item>morse.table()</syntax_item>
+    <syntax_item>t = morse.table()</syntax_item>
+  </syntax>
+  <param_input />
+  <param_output>
+    <param_output_item>
+      <param_name>t</param_name>
+      <param_description>an N-by-2 cell array; column 1 is each character, column 2 its dot/dash code.</param_description>
+    </param_output_item>
+  </param_output>
+  <description>
+    <p>Called with no output, prints the table grouped into letters, digits and punctuation. Called with an output, returns it as a cell array, for example t{1, :} is {'A', '.-'}.</p>
+  </description>
+  <used_function />
+  <bibliography>ITU-R Recommendation M.1677-1, International Morse code.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description />
+      <example_item_data><![CDATA[morse.table()
+t = morse.table();
+t(1:5, :)]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item>
+      <link linkend="${morse}morse.encode">morse.encode</link>
+    </see_also_item>
+    <see_also_item>
+      <link linkend="${morse}morse.decode">morse.decode</link>
+    </see_also_item>
+  </see_also>
+  <history>
+    <history_item>
+      <history_version>1.0.0</history_version>
+      <history_description>initial version</history_description>
+    </history_item>
+  </history>
+  <authors>
+    <author_item>Allan CORNET</author_item>
+  </authors>
+</xmldoc>

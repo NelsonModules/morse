@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xmldoc>
+  <copyright>SAME AS NELSON SOFTWARE</copyright>
+  <language>en_US</language>
+  <keyword>morse.tone</keyword>
+  <short_description>Synthesize the Morse audio samples.</short_description>
+  <syntax>
+    <syntax_item>[y, fs] = morse.tone(input)</syntax_item>
+    <syntax_item>[y, fs] = morse.tone(input, name, value)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>input</param_name>
+      <param_description>a character row vector or scalar string: plain text ('SOS') or a Morse code string ('... --- ...').</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>name, value</param_name>
+      <param_description>optional name-value pairs: 'WPM' (default 20), 'Farnsworth' (default [], when set below WPM stretches the letter and word gaps), 'Frequency' (default 700 Hz), 'SampleRate' (default 8000 Hz), 'Amplitude' (default 0.6, in [0,1]), 'RampMs' (default 5), 'Input' ('auto' (default), 'text' or 'code').</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>y</param_name>
+      <param_description>a column vector of samples in [-1, 1].</param_description>
+    </param_output_item>
+    <param_output_item>
+      <param_name>fs</param_name>
+      <param_description>the sample rate in hertz.</param_description>
+    </param_output_item>
+  </param_output>
+  <description>
+    <p>Timing is the PARIS convention: an element unit of 1.2/WPM seconds, a dit of one unit, a dah of three, a one-unit gap inside a letter, three units between letters and seven between words. Each keyed tone is a raised-cosine shaped sine so it does not click. With 'Farnsworth' below 'WPM' the letter and word gaps are stretched (ARRL timing) while the elements stay at the WPM speed, so beginners get crisp characters at a slower overall pace. This function does not play anything; see <b>morse.play</b> and <b>morse.towav</b>.</p>
+  </description>
+  <used_function />
+  <bibliography />
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description />
+      <example_item_data><![CDATA[[y, fs] = morse.tone('SOS', 'WPM', 18, 'Frequency', 600);
+size(y)]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item>
+      <link linkend="${morse}morse.play">morse.play</link>
+    </see_also_item>
+    <see_also_item>
+      <link linkend="${morse}morse.towav">morse.towav</link>
+    </see_also_item>
+    <see_also_item>
+      <link linkend="${morse}morse.encode">morse.encode</link>
+    </see_also_item>
+  </see_also>
+  <history>
+    <history_item>
+      <history_version>1.0.0</history_version>
+      <history_description>initial version</history_description>
+    </history_item>
+  </history>
+  <authors>
+    <author_item>Allan CORNET</author_item>
+  </authors>
+</xmldoc>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xmldoc>
+  <copyright>SAME AS NELSON SOFTWARE</copyright>
+  <language>en_US</language>
+  <keyword>morse.decode</keyword>
+  <short_description>Decode International Morse code into text.</short_description>
+  <syntax>
+    <syntax_item>text = morse.decode(code)</syntax_item>
+    <syntax_item>text = morse.decode(code, name, value)</syntax_item>
+    <syntax_item>[text, unknown] = morse.decode(code, ...)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>code</param_name>
+      <param_description>a character row vector or scalar string; dot/dash groups separated by spaces, words separated by '/' (or, when no '/' is present, by two or more spaces).</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>name, value</param_name>
+      <param_description>optional name-value pairs: 'Dot' (default '.'), 'Dash' (default '-'), 'OnUnknown' ('mark' (default) or 'error'), 'Placeholder' (default '?').</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>text</param_name>
+      <param_description>a character row vector, upper case (the form Morse preserves).</param_description>
+    </param_output_item>
+    <param_output_item>
+      <param_name>unknown</param_name>
+      <param_description>a cellstr of the unique dot/dash groups that matched no character.</param_description>
+    </param_output_item>
+  </param_output>
+  <description>
+    <p>Inverse of <b>morse.encode</b>. It round-trips any text made only of characters in the table. An unrecognized dot/dash group is replaced by 'Placeholder' ('mark') or raises <b>morse:unknownCode</b> ('error').</p>
+  </description>
+  <used_function />
+  <bibliography>ITU-R Recommendation M.1677-1, International Morse code.</bibliography>
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description />
+      <example_item_data><![CDATA[morse.decode('... --- ...')
+morse.decode(morse.encode('HELLO WORLD'))]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item>
+      <link linkend="${morse}morse.encode">morse.encode</link>
+    </see_also_item>
+    <see_also_item>
+      <link linkend="${morse}morse.isvalid">morse.isvalid</link>
+    </see_also_item>
+  </see_also>
+  <history>
+    <history_item>
+      <history_version>1.0.0</history_version>
+      <history_description>initial version</history_description>
+    </history_item>
+  </history>
+  <authors>
+    <author_item>Allan CORNET</author_item>
+  </authors>
+</xmldoc>

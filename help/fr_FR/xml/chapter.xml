@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xmldoc>
+  <copyright>SAME AS NELSON SOFTWARE</copyright>
+  <language>fr_FR</language>
+  <module_name>morse</module_name>
+  <chapter>Code Morse</chapter>
+  <chapter_description>
+    <p>Code Morse international pour Nelson : encoder un texte en points et
+    traits et le decoder, consulter la table ITU-R M.1677-1, synthetiser l'audio
+    (vitesse, tonalite et espacement Farnsworth reglables), le jouer ou l'ecrire
+    dans un fichier WAV, et ouvrir un entraineur interactif.</p>
+  </chapter_description>
+</xmldoc>

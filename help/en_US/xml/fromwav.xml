@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xmldoc>
+  <copyright>SAME AS NELSON SOFTWARE</copyright>
+  <language>en_US</language>
+  <keyword>morse.fromwav</keyword>
+  <short_description>Decode Morse code from a WAV audio file.</short_description>
+  <syntax>
+    <syntax_item>text = morse.fromwav(filename)</syntax_item>
+    <syntax_item>text = morse.fromwav(filename, name, value)</syntax_item>
+    <syntax_item>[text, code] = morse.fromwav(filename, ...)</syntax_item>
+    <syntax_item>[text, code, info] = morse.fromwav(filename, ...)</syntax_item>
+  </syntax>
+  <param_input>
+    <param_input_item>
+      <param_name>filename</param_name>
+      <param_description>the path of the WAV file to decode.</param_description>
+    </param_input_item>
+    <param_input_item>
+      <param_name>name, value</param_name>
+      <param_description>optional name-value pairs: 'Frequency' (default [], estimated from the dominant spectral peak), 'WindowMs' (default 5), 'Threshold' (default [], auto, in [0,1]), 'MinElementMs' (default 10).</param_description>
+    </param_input_item>
+  </param_input>
+  <param_output>
+    <param_output_item>
+      <param_name>text</param_name>
+      <param_description>the decoded text (upper case).</param_description>
+    </param_output_item>
+    <param_output_item>
+      <param_name>code</param_name>
+      <param_description>the recovered Morse code string (the form morse.encode produces).</param_description>
+    </param_output_item>
+    <param_output_item>
+      <param_name>info</param_name>
+      <param_description>a struct with the detected 'frequency' (Hz), 'unit' (seconds), 'wpm', 'threshold' and number of 'elements'.</param_description>
+    </param_output_item>
+  </param_output>
+  <description>
+    <p>The inverse of <b>morse.towav</b>. The keyed tone is turned into an on/off envelope (matched to the tone frequency), thresholded, and read as runs: the short and long tones become dits and dahs, and the silences become the gaps inside a letter, between letters and between words. The element speed is measured from the audio, so the WPM need not be known in advance, and the letter and word gaps are separated by their own clustering, so Farnsworth-spaced sending is decoded too. For a clean recording the tone frequency is found automatically; pass 'Frequency' to lock onto a known tone in a noisy recording.</p>
+  </description>
+  <used_function>
+    <used_function_item>audioread</used_function_item>
+  </used_function>
+  <bibliography />
+  <examples>
+    <example_item>
+      <example_item_type>nelson</example_item_type>
+      <example_item_description />
+      <example_item_data><![CDATA[f = [tempdir(), 'sos.wav'];
+morse.towav(f, 'SOS');
+[text, code, info] = morse.fromwav(f)]]></example_item_data>
+    </example_item>
+  </examples>
+  <see_also>
+    <see_also_item>
+      <link linkend="${morse}morse.towav">morse.towav</link>
+    </see_also_item>
+    <see_also_item>
+      <link linkend="${morse}morse.decode">morse.decode</link>
+    </see_also_item>
+    <see_also_item>
+      <link linkend="${morse}morse.tone">morse.tone</link>
+    </see_also_item>
+  </see_also>
+  <history>
+    <history_item>
+      <history_version>1.0.0</history_version>
+      <history_description>initial version</history_description>
+    </history_item>
+  </history>
+  <authors>
+    <author_item>Allan CORNET</author_item>
+  </authors>
+</xmldoc>
